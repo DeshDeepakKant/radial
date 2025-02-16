@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radial Progress Chart Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../dist/radial-progress-chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="progress-1" class="chart"></div>
+        <div id="progress-2" class="chart"></div>
+        <div id="progress-3" class="chart"></div>
+    </div>
+    <script>
+        // Single progress
+        var chart1 = new RadialProgressChart('#progress-1', {
+            diameter: 100,
+            stroke: {
+                width: 20,
+                gap: 2
+            },
+            series: [{
+                value: 75,
+                color: '#3498db'
+            }]
+        });
+
+        // Multiple rings
+        var chart2 = new RadialProgressChart('#progress-2', {
+            diameter: 100,
+            stroke: {
+                width: 10,
+                gap: 2
+            },
+            series: [
+                {value: 85, color: '#1abc9c'},
+                {value: 65, color: '#e74c3c'},
+                {value: 45, color: '#f1c40f'}
+            ]
+        });
+
+        // Animated chart
+        var chart3 = new RadialProgressChart('#progress-3', {
+            diameter: 100,
+            animation: {
+                duration: 1000
+            },
+            stroke: {
+                width: 20,
+                gap: 2
+            },
+            series: [{
+                value: 0,
+                color: '#9b59b6'
+            }]
+        });
+
+        // Animate the third chart
+        setInterval(function() {
+            chart3.update([{value: Math.random() * 100}]);
+        }, 2000);
+    </script>
+</body>
+</html>

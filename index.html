@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radial Progress Chart Example</title>
+    <script src="dist/radial-progress-chart.min.js"></script>
+</head>
+<body>
+    <div id="progress"></div>
+    <script>
+        var chart = new RadialProgressChart('.progress', {
+            diameter: 100,
+            stroke: {
+                width: 20,
+                gap: 2
+            },
+            series: [{
+                value: 75,
+                color: '#3498db'
+            }]
+        });
+    </script>
+</body>
+</html>
